@@ -1,26 +1,25 @@
 import React, { useRef, useContext } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import AppContext from '../context/AppContext';
 import '../styles/components/Information.css';
-import AppContext from '../context/AppContext.js';
 
-const Information = () => {
+const Information = ({ history }) => {
   const { state, addToBuyer } = useContext(AppContext);
   const form = useRef(null);
-  const history = useHistory();
   const { cart } = state;
 
   const handleSubmit = () => {
     const formData = new FormData(form.current);
     const buyer = {
-      name: formData('name'),
-      email: formData('email'),
-      address: formData('address'),
-      apto: formData('aptp'),
-      city: formData('city'),
-      country: formData('country'),
-      state: formData('state'),
-      cp: formData('cp'),
-      phone: formData('phone'),
+      name: formData.get('name'),
+      email: formData.get('email'),
+      address: formData.get('address'),
+      apto: formData.get('apto'),
+      city: formData.get('city'),
+      country: formData.get('country'),
+      state: formData.get('state'),
+      cp: formData.get('cp'),
+      phone: formData.get('phone'),
     };
     addToBuyer(buyer);
     history.push('/checkout/payment');
@@ -30,19 +29,19 @@ const Information = () => {
     <div className="Information">
       <div className="Information-content">
         <div className="Information-head">
-          <h2>Información de contacto</h2>
+          <h2>Informacion de contacto:</h2>
         </div>
         <div className="Information-form">
           <form ref={form}>
             <input type="text" placeholder="Nombre completo" name="name" />
-            <input type="email" placeholder="Correo electrónico" name="email" />
-            <input type="text" placeholder="Dirección" name="address" />
+            <input type="text" placeholder="Correo Electronico" name="email" />
+            <input type="text" placeholder="Direccion" name="address" />
             <input type="text" placeholder="Apto" name="apto" />
             <input type="text" placeholder="Ciudad" name="city" />
-            <input type="text" placeholder="País" name="country" />
+            <input type="text" placeholder="Pais" name="country" />
             <input type="text" placeholder="Estado" name="state" />
-            <input type="text" placeholder="Código postal" name="cp" />
-            <input type="text" placeholder="Teléfono" name="phone" />
+            <input type="text" placeholder="Codigo postal" name="cp" />
+            <input type="text" placeholder="Telefono" name="phone" />
           </form>
         </div>
         <div className="Information-buttons">
@@ -51,15 +50,15 @@ const Information = () => {
           </div>
           <div className="Information-next">
             <button type="button" onClick={handleSubmit}>
-              pagar
+              Pagar
             </button>
           </div>
         </div>
       </div>
       <div className="Information-sidebar">
-        <h3>Pedido</h3>
+        <h3>Pedido:</h3>
         {cart.map((item) => (
-          <div className="Information-item">
+          <div className="Information-item" key={item.title}>
             <div className="Information-element">
               <h4>{item.title}</h4>
               <span>${item.price}</span>
