@@ -6,7 +6,8 @@
 }
 .Products-item {
   text-decoration: none;
-  box-shadow: 8px 14px 38px rgba(39,44,49,0.06), 1px 3px 8px rgba(39,44,49,0.03);
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
   border-radius: 5px;
   margin: 0 0 20px 0;
   position: relative;
@@ -15,6 +16,7 @@
   padding: 10px;
 }
 .Products-item-info h2 {
+  background-color: red;
   font-size: 18px;
   font-weight: bold;
   display: flex;
@@ -34,7 +36,7 @@
   object-fit: contain;
 }
 .Products-item button {
-  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+  background-color: #63b8ee;
   width: 100%;
   padding: 10px;
   border-radius: 0px 0px 5px 5px;
@@ -44,6 +46,10 @@
   font-size: 14px;
   font-weight: 300;
 }
-.Products-item button:hover {
-  background-color: rgba(39,44,49,0.06);
+.Product-button:hover {
+  background-color: #3679b8;
+}
+
+.Product-price {
+  display: block;
 }

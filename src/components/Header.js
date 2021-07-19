@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <div className="Header">
       <h1 className="Header-title">
-        <Link to="/">Move.Tech</Link>
+        <Link to="/">Move.Store</Link>
       </h1>
       <div className="Header-checkout">
         <Link to="/checkout">

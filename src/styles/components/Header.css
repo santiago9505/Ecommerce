@@ -1,6 +1,7 @@
 .Header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 .Header-checkout {
   display: flex;
@@ -12,10 +13,10 @@
 }
 .Header-alert {
   color: #33b13a;
-  font-size: 14px;
+  font-size: 20px;
   margin-left: 5px;
 }
 .Header a {
   text-decoration: none;
-  color: #33b1ff;
+  color: #0c3650;
 }
